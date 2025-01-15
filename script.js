@@ -1,8 +1,7 @@
-// Utility function to display output in the modal
 function displayModal(result) {
     const modal = document.getElementById("resultModal");
     const modalResult = document.getElementById("modalResult");
-    modalResult.innerHTML = `${result}`;  // Display the result inside the modal
+    modalResult.innerHTML = `${result}`; 
 
     // Show the modal
     modal.style.display = "block";
@@ -11,10 +10,9 @@ function displayModal(result) {
 // Close the modal
 document.querySelector(".close").addEventListener("click", function () {
     const modal = document.getElementById("resultModal");
-    modal.style.display = "none";  // Close the modal when the "x" is clicked
+    modal.style.display = "none";  
 });
 
-// Utility function to display output with animation
 function displayOutput(result) {
     const outputDiv = document.getElementById("output");
     outputDiv.innerHTML = `Result: ${result}`;
@@ -22,7 +20,6 @@ function displayOutput(result) {
     alert(result);
 }
 
-// Handling the encryption and decryption actions
 document.getElementById("encryptBtn").addEventListener("click", function () {
     const message = document.getElementById("inputMessage").value;
     const cipher = document.getElementById("cipher").value;
@@ -75,7 +72,6 @@ document.getElementById("decryptBtn").addEventListener("click", function () {
     displayModal(decryptedMessage);
 });
 
-// DES Encryption and Decryption
 function desEncrypt(message, key) {
     return CryptoJS.DES.encrypt(message, key).toString();
 }
@@ -85,7 +81,7 @@ function desDecrypt(message, key) {
     return bytes.toString(CryptoJS.enc.Utf8);
 }
 
-// 3DES Encryption and Decryption
+
 function tripleDesEncrypt(message, key) {
     return CryptoJS.TripleDES.encrypt(message, key).toString();
 }
@@ -95,7 +91,7 @@ function tripleDesDecrypt(message, key) {
     return bytes.toString(CryptoJS.enc.Utf8);
 }
 
-// AES Encryption and Decryption
+
 function aesEncrypt(message, key) {
     return CryptoJS.AES.encrypt(message, key).toString();
 }
@@ -105,7 +101,7 @@ function aesDecrypt(message, key) {
     return bytes.toString(CryptoJS.enc.Utf8);
 }
 
-// RC4 Encryption and Decryption
+
 function rc4Encrypt(message, key) {
     return CryptoJS.RC4.encrypt(message, key).toString();
 }
@@ -115,7 +111,7 @@ function rc4Decrypt(message, key) {
     return bytes.toString(CryptoJS.enc.Utf8);
 }
 
-// Click outside of modal to close it
+
 window.onclick = function (event) {
     const modal = document.getElementById("resultModal");
     if (event.target == modal) {
