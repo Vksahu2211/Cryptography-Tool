@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptography Tool</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include CryptoJS Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Cryptography Tool</h1>
+
+        <!-- Message Input -->
+        <label for="inputMessage">Message:</label>
+        <textarea id="inputMessage" class="shadow" rows="4" cols="50" placeholder="Enter your message here"></textarea>
+
+        <!-- Cipher Selection -->
+        <label for="cipher">Select Cipher:</label>
+        <select id="cipher">
+            <option value="DES">DES</option>
+            <option value="3DES">3DES</option>
+            <option value="AES">AES</option>
+            <option value="RC4">RC4</option>
+            <option value="Default" selected disabled>Default</option>
+        </select>
+
+        <!-- Key Input -->
+        <label for="key">Key (For Encryption/Decryption):</label>
+        <input type="text" id="key" placeholder="Enter key here">
+
+        <!-- Buttons for Encryption and Decryption -->
+        <button id="encryptBtn" class="neu-button">Encrypt</button>
+        <button id="decryptBtn" class="neu-button">Decrypt</button>
+
+        <!-- Modal for Displaying Results -->
+        <div id="resultModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Output:</h2>
+                <p id="modalResult">Result will be displayed here</p>
+            </div>
+        </div>
+
+        <!-- Output Display -->
+        <div id="output" class="output"></div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script src="script.js"></script>
+</body>
+</html>
